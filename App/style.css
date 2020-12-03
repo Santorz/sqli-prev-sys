@@ -1,0 +1,106 @@
+/* IMPORT CSS FILES */
+@import url('css/fonts.css');
+
+ /* shhh!!!! */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* What do you expect me to say here too? */
+
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+/* The body of the page.Nothing else */
+
+body {
+    overflow-x: hidden;
+    height: 100%;
+    width: 100vw;
+    margin: 0;
+    box-sizing: border-box;
+};
+
+    
+a{
+    outline: none;
+    user-select: none;
+}
+
+.parent-container{
+    background: url(img/bg-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    min-height: 100%;
+}
+
+.container-1{
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+#topmost{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 15% 50% 35%;
+    user-select: none;
+    background: inherit;
+    padding: .3rem;
+}
+
+
+.logo-area-div{
+    position: relative;
+}
+
+.logotext-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: .5rem;
+    border: .75px solid whitesmoke;
+}
+
+.logotext-div h1{
+    font-family: 'Mukta', sans-serif;
+    letter-spacing: 1px;
+    font-size: 3rem;
+    padding: .75rem;
+    font-weight: bold !important;
+}
+
+#logotext1{
+    color: #74a2ff;
+}
+
+#logotext2{
+    color: #31db39;
+}
+
+.version-text{
+    position: relative;
+    color: whitesmoke;
+    font-family: 'Mukta', sans-serif;
+    font-size: 1.2rem;
+    top: .75rem;
+}
+
+.mobile-options-menu{
+    display: none;
+}

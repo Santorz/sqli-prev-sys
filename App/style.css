@@ -43,6 +43,8 @@ a{
     background-attachment: fixed;
     background-position: 50% 50%;
     min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .container-1{
@@ -55,10 +57,10 @@ a{
     position: relative;
     width: 100%;
     display: grid;
-    grid-template-columns: 15% 50% 35%;
+    grid-template-columns: 25% 50% 25%;
     user-select: none;
     background: inherit;
-    padding: .3rem;
+    padding: .75rem;
 }
 
 
@@ -74,7 +76,7 @@ a{
     background-color: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
     border-radius: .5rem;
-    border: .75px solid whitesmoke;
+    border: 1.5px solid whitesmoke;
 }
 
 .logotext-div h1{
@@ -103,4 +105,13 @@ a{
 
 .mobile-options-menu{
     display: none;
+}
+
+
+.container-2{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

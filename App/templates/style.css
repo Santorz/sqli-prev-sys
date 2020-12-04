@@ -1,0 +1,263 @@
+/* IMPORT CSS FILES */
+@import url('css/fonts.css');
+
+
+
+/* FOr JS Use only */
+.bold-tick{
+    display: inline-block !important;
+    font-size: 1.35rem;
+    font-weight: bolder;
+    color: #29ac2f;
+}
+
+.i-am-unclikable{
+    cursor: not-allowed !important;
+}
+
+.heavily-box-shadowed{
+    box-shadow: 0 0 7px 1.75px black;
+}
+
+.whitened{
+    background-color: white !important;
+}
+
+.greyed-out{
+    background-color: grey !important;
+    color: rgb(53, 53, 53) !important;
+}
+
+.bolded{
+    font-weight: bold;
+}
+
+.z-index-reduced-by-1{
+    position: relative;
+    z-index: -1 !important;
+}
+
+
+
+ /* shhh!!!! */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* What do you expect me to say here too? */
+
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+/* The body of the page.Nothing else */
+
+body {
+    overflow-x: hidden;
+    height: 100%;
+    width: 100vw;
+    margin: 0;
+    box-sizing: border-box;
+};
+
+    
+a{
+    outline: none;
+    user-select: none;
+}
+
+.parent-container{
+    background: url(img/bg-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-1{
+    position: relative;
+    width: 100%;
+    display: block;
+}
+
+#topmost{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    user-select: none;
+    background: inherit;
+    padding: .75rem;
+}
+
+
+.logo-area-div{
+    position: relative;
+}
+
+.logotext-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: .5rem;
+    border: 1.5px solid whitesmoke;
+}
+
+.logotext-div h1{
+    font-family: 'Mukta', sans-serif;
+    letter-spacing: 1px;
+    font-size: 3rem;
+    padding: .75rem;
+    font-weight: bold !important;
+}
+
+#logotext1{
+    color: #74a2ff;
+}
+
+#logotext2{
+    color: #31db39;
+}
+
+.version-text{
+    position: relative;
+    color: whitesmoke;
+    font-family: 'Mukta', sans-serif;
+    font-size: 1.2rem;
+    top: .75rem;
+}
+
+.mobile-options-menu{
+    display: none;
+}
+
+
+.container-2{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 22rem;
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.main-control{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 30rem;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(7px);
+    width: 40rem;
+    border-radius: .4rem;
+}
+
+.db-selector-div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.db-selector-div h2{
+    display: block;
+    position: relative;
+    font-family: 'Texturina', serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    user-select: none;
+    padding: .9rem;
+}
+
+.db-selector-div div{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.db-type-option{
+    position: relative;
+    background-color: whitesmoke;
+    margin: .4rem;
+    user-select: none;
+    border-radius: .3rem;
+    cursor: pointer;
+    padding: 1rem;
+    width: 45%;
+    font-family: 'Mukta', sans-serif;
+    border: 2px solid black;
+    font-size: 1.3rem;
+}
+
+.db-type-option:hover, .db-type-option:focus{
+    box-shadow: 0 0 2px 1px black;
+}
+
+.db-type-option i{
+    display: none;
+}
+
+.query-input-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 10rem;
+    margin-top: 1.5rem;
+}
+
+.query-input-div form{
+    position: relative;
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #74a2ff;
+    padding: 2rem;
+    border-radius: .4rem;
+    box-shadow: 0 0 5px 1px rgb(41, 41, 41);
+}
+
+.query-textbox{
+    min-height:3rem;
+    width: 14rem;
+    border-radius: .2rem;
+    border: none;
+}
+
+.signin{
+    background-color: black;
+    color: whitesmoke;
+    margin-top: 2rem;
+    padding: .4rem;
+    width: 9rem;
+    font-size: 1.3rem;
+    font-family: 'Mukta', sans-serif;
+    text-transform: uppercase;
+    border-radius: .3rem;
+}

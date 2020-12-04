@@ -4,7 +4,8 @@ import dangerous_queries
 from colorama import init
 init()
 from colorama import Fore, Style
-import difflib
+import json
+import re
 
 # Package to check for close matches
 from fuzzywuzzy import fuzz
@@ -71,7 +72,7 @@ def main_control():
 
                                 obtained_ratios.append(float(ratio))
                                 
-
+                            
 
                             if (query_input in obtained_dangerous_queries):
                                 print(f""" \n   {red_text}{bright_text}   {query_input}   {reset_styles} is a DANGEROUS {db_version_value} query ! \n""")
@@ -93,10 +94,9 @@ def main_control():
                          
             
     else:
-        print('Unknown Database !')
+        print('Unknown Database ! \n'.upper())
         
            
-
                         
                          
                                 
@@ -105,3 +105,11 @@ def main_control():
 
 main_control()
 
+
+for key2, val2 in db_versions.items():
+    filename = val2.lower()
+
+    with open(filename+'.json', "w") as outjsonfile:
+       
+        json.dump([val3 for key3, val3 in input_options.items()], outjsonfile)
+        

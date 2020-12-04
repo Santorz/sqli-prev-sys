@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" href="style.css" type="text/css">
         <link rel="stylesheet" href="css/keyframes.css" type="text/css">
         <link rel="stylesheet" href="css/normalize.css" type="text/css">
@@ -51,9 +52,17 @@
 
             <div class="container-2">
 
-                <div main-control>
-                    <div class="db-selector-div"></div>
-                    <div class="query-input-div"></div>
+                <div class = "main-control">
+                    <div class="db-selector-div">
+                        <h2>Please Choose the Database System You Use</h2>
+                        <div>
+                            <span class="db-type-option" id="mysql-option">MySQL Database <i class="fa fa-check"></i> </span>
+                            <span class="db-type-option" id="postgresql-option">PostgreSQL Database <i class="fa fa-check"></i> </span>
+                        </div>
+                    </div>
+                    <div class="query-input-div">
+
+                    </div>
                     <div class="submit-query-div"></div>
                 </div>
 
@@ -61,4 +70,8 @@
 
         </div>
 
+
+
+
+        <script src="script.js" type="module"></script>
     </body>

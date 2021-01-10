@@ -8,8 +8,6 @@ import json
 import re
 
 # Package to check for close matches
-from fuzzywuzzy import fuzz
-from fuzzywuzzy import process
 from difflib import SequenceMatcher
 from difflib import get_close_matches
 
@@ -108,8 +106,12 @@ main_control()
 
 for key2, val2 in db_versions.items():
     filename = val2.lower()
-
+    
+    dict_iter_val = int(list(db_versions.values()).index(val2))
+    
+    
     with open(filename+'.json', "w") as outjsonfile:
        
-        json.dump([val3 for key3, val3 in input_options.items()], outjsonfile)
+        json.dump(list(input_options.values())[dict_iter_val], outjsonfile)
+        
         

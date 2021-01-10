@@ -1,12 +1,14 @@
 //Selct elements
 
+var difflib = require('difflib');
+
 let main_control_div = document.querySelector('.main-control');
 let db_type_options = Array.from(document.querySelectorAll('.db-type-option'));
 let query_input_div = document.querySelector('.query-input-div');
 
 // Setting variables
 let hasInputBoxShown = false;
-let all_query_arr = [];
+let all_query_obj = [];
 
 
 for ( let i = 0; i < db_type_options.length; i++){
@@ -33,7 +35,6 @@ for ( let i = 0; i < db_type_options.length; i++){
         }
 
         let json_location = "../../"+dbname+'.json'
-
         readJSON(json_location)
 
 
@@ -79,17 +80,40 @@ function createDBQueryBox (dbname){
 
         // Target click on button
         signin_button.onclick = function(e){
+
             e.preventDefault()
+
             if (query_textbox.value !== ""){
-                for (let i in all_query_arr){
-                    let extracted_query = all_query_arr[i];
-                    if (query_textbox.value == extracted_query){
-                        alert('DANGER')
-                        break
+
+                // for (let i in Object.values(all_query_obj)){
+                    // 
+                // }
+
+
+                for (let i in Object.values(all_query_obj)){
+
+                    let query_exists_figure = Object.values(all_query_obj).indexOf(query_textbox.value.toLowerCase());
+                    let each_query = Object.values(all_query_obj)[i];
+                    
+                    let match_ratio1 = new difflib.SequenceMatcher(null, query_textbox.value.toLowerCase(), each_query.toLowerCase());
+                    let match_ratio2 = parseFloat(match_ratio1.ratio());
+
+                    console.log(Object.values(all_query_obj)[i])
+                    console.log(query_exists_figure);
+                
+                    if (query_exists_figure >= 0 || match_ratio2 === 1){
+                        alert('DANGER');
+                        // return true;
                     }
-                    else{
-                        alert('SOMEHOW SAFE')
-                        break
+
+                    else if (query_exists_figure < 0 && match_ratio2 > 0.6 && match_ratio2 < 1){
+                        alert(query_textbox.value + ' is potentially dangerous... \n It is close to ' + each_query);
+                        // return true;
+                    }
+
+                    else if (query_exists_figure < 0 && match_ratio2 < 0.5){
+                        alert('SOMEHOW SAFE');
+                        // return true;
                     }
                 }
             }
@@ -109,27 +133,23 @@ function makeDBtypeOptionGreyedOut (element){
 
 
 
-function readJSON (json_file) {
+function  readJSON(json_file) {
+
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4){
+    if (this.readyState === 4){
 
         var post = xmlhttp.responseText;
         var json_data = JSON.parse(post);
 
-        for (let i in json_data){
-            for (var key of Object.keys(json_data[i])) {
-                let all_queries = json_data[i][key]
-                all_query_arr.push(all_queries)
+            for (var key of Object.keys(json_data)) {
+                let all_queries = json_data[key]
+                all_query_obj.push(all_queries)
             }
-        }
+        
     
         
     }
-
-
-
-
 
 }; //end onreadystate
 

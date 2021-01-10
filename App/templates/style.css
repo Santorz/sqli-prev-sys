@@ -240,7 +240,7 @@ a{
     background-color: #74a2ff;
     padding: 2rem;
     border-radius: .4rem;
-    box-shadow: 0 0 5px 1px rgb(41, 41, 41);
+    box-shadow: 0 0 6px 1.2px rgb(41, 41, 41);
 }
 
 .query-textbox{
